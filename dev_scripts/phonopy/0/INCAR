@@ -1,0 +1,37 @@
+# Precision and convergence settings = 
+PREC = High
+NELMIN = 8
+NELM = 100
+EDIFF = 1e-08
+EDIFFG = -0.0001
+# End Precision and convergence settings = 
+
+# Electronic structure settings = 
+ISMEAR = 1
+SIGMA = 0.05
+ISPIN = 2
+ICHARG = 2
+NEDOS = 300
+# End Electronic structure settings = 
+
+# Optimization settings = 
+LREAL = False
+NSW = 0
+IBRION = -1
+ENCUT = 600
+# End Optimization settings = 
+
+# Wavefunction and grid settings = 
+LWAVE = False
+LCHARG = False
+LASPH = True
+LORBIT = 11
+LMAXMIX = 4
+ADDGRID = True
+NWRITE = 3
+# End Wavefunction and grid settings = 
+
+# Parallelization parameters = 
+NCORE = 20
+# End Parallelization parameters = 
+

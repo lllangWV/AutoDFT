@@ -1,0 +1,57 @@
+root_dir: "."
+data_dir: "{{ root_dir }}/data"
+external_data_dir: "{{ data_dir }}/external"
+log_dir: "{{ root_dir }}/logs"
+tests_dir: "{{ root_dir }}/tests"
+db_name: 'AutoDFT'
+
+potcar_dir: 'PP_Vasp'
+
+
+numpy_config:
+  np_printoptions:
+    linewidth:  400
+    precision: 3
+
+
+logging_config:
+  version: 1
+  disable_existing_loggers: False
+
+  formatters:
+    simple:
+      format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+      datefmt: '%Y-%m-%d %H:%M:%S'
+
+  handlers:
+    console:
+      class: logging.StreamHandler
+      formatter: simple
+      stream: ext://sys.stdout
+
+    file:
+      class: logging.FileHandler
+      formatter: simple
+      filename: "{{ log_dir }}/autodft.log"
+      mode: a
+
+  loggers:
+    autodft:
+      level: ERROR
+      handlers: [console]
+      propagate: no
+    timing:
+      level: DEBUG
+      handlers: [console]
+      propagate: no
+    tests:
+      level: DEBUG
+      handlers: [console]
+      propagate: no
+
+
+
+  # root:
+  #   level: INFO
+  #   handlers: [console]
+  #   propagate: no
